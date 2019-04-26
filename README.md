@@ -1,0 +1,23 @@
+# daheng_ros_driver
+
+1:ros 驱动包 daheng_ros_x86-master
+
+2:mer 驱动包 dhcam_install_20181107
+
+3:安装水星驱动
+
+4:解压缩 daheng_ros_x86-master ，拷贝 daheng_ros文件夹，到/home/xxg/catkin_ws/src
+
+5：开终端切换路径cd ~/catkin_ws/
+
+6: 打开/home/xxg/catkin_ws/src/daheng_ros下的CMakelist.txt 修改头文件和lib库路径为当前机器的路径后输入 catkin_make
+
+7:sudo -s
+
+8:打开终端 输入  roscore
+
+9:打开终端输入 roslaunch daheng_ros camera.launch(单目) roslaunch daheng_ros binocular.launch(双目)
+
+10:打开终端 开启rqt_image_driver   : rosrun rqt_image_view rqt_image_view 
+
+11:切换节点/cam1/image_raw获取实时图像
