@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- set camera to -->
+    <arg name="camera1" default="image_raw1" />
+    <arg name="camera2" default="image_raw2" />
+    <!-- set camera id to -->
+    <arg name="camera1_id" default="left" />
+    <arg name="camera2_id" default="right" />
+    <!-- set camera name to -->
+    <arg name="camera1_name" default="cam1" />
+    <arg name="camera2_name" default="cam2" />
+    <!-- frame_id for the camera -->
+    <arg name="camera1_frame_id" default="$(arg camera1_name)" />
+    <arg name="camera2_frame_id" default="$(arg camera2_name)" />
+
+    <include file="$(find daheng_ros)/launch/camera.launch">
+        <arg name="camera" default="$(arg camera1)" />
+        <arg name="camera_id" default="$(arg camera1_id)" />
+        <arg name="frame_id" value="$(arg camera1_frame_id)"/>
+        <arg name="camera_name" value="$(arg camera1_name)"/>
+    </include>
+
+    <include file="$(find daheng_ros)/launch/camera.launch">
+        <arg name="camera" default="$(arg camera2)" />
+        <arg name="camera_id" default="$(arg camera2_id)" />
+        <arg name="frame_id" value="$(arg camera2_frame_id)"/>
+        <arg name="camera_name" value="$(arg camera2_name)"/>
+    </include>
+
+</launch>
